@@ -1,0 +1,21 @@
+{
+  "name": "02-greeting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\"&& exit 1",
+    "lint": "eslint **.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.20.1",
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0"
+  }
+}
