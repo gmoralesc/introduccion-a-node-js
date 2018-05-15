@@ -1,0 +1,13 @@
+{
+  "name": "08-web-server",
+  "version": "1.0.0",
+  "description": "Simple Web Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gustavo Morales",
+  "license": "ISC"
+}
