@@ -1,0 +1,9 @@
+html
+  head
+    title= pageTitle
+  body
+    h1 Index
+    ul
+      each item in menu
+        li
+          a(href=item.link)= item.name
