@@ -1,0 +1,11 @@
+html
+  head
+    title= pageTitle
+    link(href='styles.css',rel='stylesheet')
+  body
+    h1 About
+    ul.menu
+      each item in menu
+        li
+          a(href=item.link)= item.name
+    p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

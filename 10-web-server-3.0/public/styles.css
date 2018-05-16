@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.menu {
+  padding: 0;
+  text-align: center;
+}
+
+.menu li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 8px;
+}
+
+.menu li a {
+  background-color: navy;
+  border-radius: 24px;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+p {
+  text-align: center;
+}
