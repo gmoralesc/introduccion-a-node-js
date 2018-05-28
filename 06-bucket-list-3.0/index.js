@@ -1,20 +1,20 @@
-var inquirer = require('inquirer');
+const inquirer = require('inquirer');
 
-var datastore = require('./datastore');
-var utils = require('./utils');
+const datastore = require('./datastore');
+const utils = require('./utils');
 
-var filePath = 'data.json';
-var items = datastore.load(filePath);
+const filePath = 'data.json';
+const items = datastore.load(filePath);
 
-var options = [{
+const options = [{
   type: 'input',
   name: 'item',
   message: "What do you want to add?"
-},{
+}, {
   type: 'input',
   name: 'times',
   message: "How many times do you want do it?"
-},{
+}, {
   type: 'list',
   name: 'frequency',
   message: "Which will be the frequency?",
@@ -28,7 +28,7 @@ inquirer.prompt(options).then(answers => {
     times: answers.times,
     frequency: answers.frequency
   });
-  
+
   datastore.save(filePath, items);
   utils.printList(items);
 });

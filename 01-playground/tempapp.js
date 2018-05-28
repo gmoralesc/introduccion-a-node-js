@@ -1,1 +1,1 @@
-var ups = ;
+const ups = ;

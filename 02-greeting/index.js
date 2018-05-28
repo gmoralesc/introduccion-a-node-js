@@ -1,8 +1,8 @@
-var moment = require("moment");
-var colors = require("colors/safe");
+const moment = require("moment");
+const colors = require("colors/safe");
 
 // Get hour number in 24 format
-var hour = moment().hour();
+const hour = moment().hour();
 
 // Ask for hours range
 if (hour >= 6 && hour < 12) {

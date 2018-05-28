@@ -1,14 +1,25 @@
-var commandLineArgs = require('command-line-args')
+const commandLineArgs = require('command-line-args');
 
-var params = [
-  { name: 'name', alias: 'n', type: String },
-  { name: 'height', alias: 'h', type: Number },
-  { name: 'weight', alias: 'w', type: Number }
+const params = [{
+    name: 'name',
+    alias: 'n',
+    type: String
+  },
+  {
+    name: 'height',
+    alias: 'h',
+    type: Number
+  },
+  {
+    name: 'weight',
+    alias: 'w',
+    type: Number
+  }
 ];
 
-var options = commandLineArgs(params)
-var bmi = options.weight / Math.pow(options.height, 2);
-var result = '';
+const options = commandLineArgs(params);
+const bmi = options.weight / Math.pow(options.height, 2);
+let result = '';
 
 if (bmi < 18) {
   result = 'Peso bajo';

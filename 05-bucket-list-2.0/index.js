@@ -1,23 +1,34 @@
-var fs = require('fs');
-var commandLineArgs = require('command-line-args')
+const fs = require('fs');
+const commandLineArgs = require('command-line-args')
 
-var params = [
-  { name: 'item', alias: 'i', type: String },
-  { name: 'frequency', alias: 'f', type: String },
-  { name: 'times', alias: 't', type: Number }
+const params = [{
+    name: 'item',
+    alias: 'i',
+    type: String
+  },
+  {
+    name: 'frequency',
+    alias: 'f',
+    type: String
+  },
+  {
+    name: 'times',
+    alias: 't',
+    type: Number
+  }
 ];
 
-var options = commandLineArgs(params);
+const options = commandLineArgs(params);
 
-var content = '';
-var items = [];
-var filePath = 'data.json';
+let content = '';
+let items = [];
+const filePath = 'data.json';
 
-try{
+try {
   //if file exist
   content = fs.readFileSync(filePath, 'utf-8');
   items = JSON.parse(content);
-}catch(e){
+} catch (e) {
   //if file does not exist
   fs.openSync(filePath, 'w');
 }
@@ -30,6 +41,6 @@ items.push({
 
 fs.writeFileSync(filePath, JSON.stringify(items, null, 2));
 
-items.forEach(function (el){
+items.forEach(function (el) {
   console.log(`You want to ${el.item} ${el.times} time(s) in a ${el.frequency}`);
 });

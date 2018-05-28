@@ -1,12 +1,12 @@
-var fs = require('fs');
+const fs = require('fs');
 
 module.exports.load = function (filePath) {
-  var content = '';
-  try{
+  let content = '';
+  try {
     //if file exist
     content = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(content);
-  }catch(e){
+  } catch (e) {
     //if file does not exist
     fs.openSync(filePath, 'w');
     return [];
