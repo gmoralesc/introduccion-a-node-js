@@ -2,7 +2,9 @@ const {
   findPattern
 } = require('./libs');
 
-findPattern(['logs/log1.txt', 'logs/log2.txt'], /ERROR \w+/g)
+const pattern = new RegExp(process.argv[2] || '');
+
+findPattern(['logs/log1.txt', 'logs/log2.txt'], pattern)
   .on('file-read', function (file) {
     console.log(`File: ${file}`);
   })
