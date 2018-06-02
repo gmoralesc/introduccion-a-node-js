@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 const commandLineArgs = require('command-line-args')
 
 const params = [{
@@ -19,9 +20,9 @@ const params = [{
 ];
 
 const options = commandLineArgs(params);
-const line = `You want to ${options.item} ${options.times} time(s) in a ${options.frequency}`;
+const line = `You want to ${options.item} ${options.times} time(s) every ${options.frequency}`;
 
-fs.appendFileSync('data.txt', line + "\r\n");
+fs.appendFileSync('data.txt', line + os.EOL);
 
 const content = fs.readFileSync('data.txt', 'utf-8');
 console.log(content);
