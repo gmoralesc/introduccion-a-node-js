@@ -9,21 +9,19 @@ const server = http.createServer((req, res) => {
   const path = url.parse(req.url, true);
   const pathName = `${__dirname}/public${path.pathname}`;
 
-  fs.exists(pathName, function (exists) {
-    if (!exists) {
+  fs.readFile(pathName, 'utf-8', (err, file) => {
+    if (err) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain');
       res.write('404 Not Found');
       res.end();
       return;
     }
-
-    fs.readFile(pathName, 'utf-8', (err, file) => {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html');
-      res.end(file);
-    });
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end(file);
   });
+
 });
 
 server.listen(port, hostname, () => {

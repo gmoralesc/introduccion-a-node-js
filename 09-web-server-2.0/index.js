@@ -11,30 +11,27 @@ const server = http.createServer((req, res) => {
   const name = path.pathname.substring(0, path.pathname.lastIndexOf('.'));
   const pathName = `${__dirname}/views${name}.pug`;
 
-  fs.exists(pathName, function (exists) {
-    if (!exists) {
+  fs.readFile(pathName, 'utf-8', (err, file) => {
+    if (err) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain');
       res.write('404 Not Found');
       res.end();
       return;
     }
-
-    fs.readFile(pathName, 'utf-8', (err, file) => {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html');
-      const html = pug.render(file, {
-        pageTitle: 'Our great Website',
-        menu: [{
-          name: 'Home',
-          link: 'index.html'
-        }, {
-          name: 'About',
-          link: 'about.html'
-        }]
-      });
-      res.end(html);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    const html = pug.render(file, {
+      pageTitle: 'Our great Website',
+      menu: [{
+        name: 'Home',
+        link: 'index.html'
+      }, {
+        name: 'About',
+        link: 'about.html'
+      }]
     });
+    res.end(html);
   });
 });
 
