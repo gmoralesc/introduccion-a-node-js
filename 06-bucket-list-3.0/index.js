@@ -1,11 +1,12 @@
 const inquirer = require('inquirer');
+const path = require('path');
 
 const datastore = require('./datastore');
 const utils = require('./utils');
 
-const filePath = 'data.json';
-const items = datastore.load(filePath);
-
+const filename = 'data.json';
+const filepath = `${path.resolve('.')}/${filename}`;
+const items = datastore.load(filepath);
 const options = [{
   type: 'input',
   name: 'item',
@@ -13,7 +14,7 @@ const options = [{
 }, {
   type: 'input',
   name: 'times',
-  message: "How many times do you want do it?"
+  message: "How many times do you want to do it?"
 }, {
   type: 'list',
   name: 'frequency',
@@ -29,6 +30,6 @@ inquirer.prompt(options).then(answers => {
     frequency: answers.frequency
   });
 
-  datastore.save(filePath, items);
+  datastore.save(filepath, items);
   utils.printList(items);
 });
