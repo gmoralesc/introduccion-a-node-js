@@ -1,3 +1,3 @@
-const moment = require("moment");
+const moment = require('moment');
 
-console.log(moment().format("LLLL"));
+console.log(moment().format('LLLL'));
