@@ -1,3 +1,3 @@
-const moment = require('moment');
+const dateFns = require("date-fns");
 
-console.log(moment().format('LLLL'));
+console.log(dateFns.format(new Date(), "YYYY/MM/DD"));
