@@ -1,0 +1,23 @@
+{
+  "name": "04-greeting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "command-line-args": "^5.1.1",
+    "cross-env": "^6.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "cross-env NODE_ENV=test echo \"Error: no test specified\"&& exit 1",
+    "lint": "eslint **.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
