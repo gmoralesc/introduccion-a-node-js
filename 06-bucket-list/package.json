@@ -1,5 +1,5 @@
 {
-  "name": "05-bucket-list-2.0",
+  "name": "06-bucket-list-3.0",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "command-line-args": "^5.0.2"
+    "command-line-args": "^5.1.1"
   }
 }
